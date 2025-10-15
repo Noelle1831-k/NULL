@@ -1,0 +1,70 @@
+<p align="center">
+<img width="765" alt="image" src="assets/title.png">
+     </a>
+  
+## Overview of this repository
+- [Abstract](#abstract)
+- [Quick Start](#quick-start)
+- [Contact](#contact)
+
+## Abstract
+
+<img src="assets/Overview.png">
+
+Large Language Models (LLMs) have accelerated the rapid development of chatbot web applications in various domains, such as coding, biomedicine and psychology.
+Compared to general LLMs like ChatGPT, domain-specific LLMs require a greater sense of responsibility.
+For instance, if a programming LLM casually answers medical or psychological questions, it not only misleads the public but also poses legal risks.
+This highlights new demands for monitoring and preventing such irresponsible behaviors.
+Existing efforts attempt to monitor LLMs from multiple aspects, such as lying, jailbreaks, and toxic content, while overlooking out-of-domain behaviors.
+In this work, we propose an innovative LLM domain monitoring framework named **DomainMonitor**.
+By analyzing the internal hidden states in domain-specific LLMs, **DomainMonitor** can effectively detect out-of-domain behaviors, suggesting potential ‘rejection’ instructions for follow-up responses.
+Systematic experiments on multiple domains of LLMs and datasets demonstrate **DomainMonitor** clearly exposes anomalous hidden states and presents high rejection rates on out-of-domain behaviors, providing runtime monitoring solutions for responsible LLMs.
+
+## Quick Start
+
+### Step 1: Install Dependencies
+
+Install the required Python libraries by running:
+
+```bash
+pip install -r requirements.txt
+```
+
+### Step 2: Prepare the Model
+
+Download the target model to your custom path from Hugging Face:
+
+```bash
+huggingface-cli download --resume-download <model_name> --local-dir <save_path>
+```
+### Step 3: Prepare the Dataset
+
+We have placed the files of the **Wikidata, Sciq, and Mathematical_problems datasets** in the **/data** folder. For other open-source datasets, please download them to your custom path, like this:
+
+```bash
+huggingface-cli download --repo-type dataset --resume-download <dataset_name> --local-dir <save_path>
+```
+
+### Step 4: Collect the Hidden States
+
+For the analysis file of the target model, such as **code_hiddenstate_analysis.py**, replace the variable name **model_name** with the path where the downloaded model was saved in Step 2.
+And replace the dataset loading file with the path where the downloaded dataset was saved in Step 3.
+
+```bash
+python code_hiddenstate_analysis.py
+```
+
+The result will be saved as _hidden\_states.npy_ contains feature representations for training or testing detectors.
+
+### Step 5: Train the Detector & Test the Results
+
+For the target domain model, you can modify the corresponding training file, such as **lof_code_hiddenstate.py**, add the training dataset or change the test dataset for it, and run:
+
+```bash
+python lof_code_hiddenstate.py
+```
+
+The results will be saved as a _results.txt_ file. You can add test datasets from different domains to observe the detection effect of **LDM**.
+
+## Contact
+We are looking forward to any valuable questions or suggestions, please feel free to contact us at ```@None```
