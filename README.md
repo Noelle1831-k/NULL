@@ -2,11 +2,6 @@
 <img width="765" alt="image" src="assets/title.png">
      </a>
   
-## Overview of this repository
-- [Abstract](#abstract)
-- [Quick Start](#quick-start)
-- [Contact](#contact)
-
 ## Abstract
 
 <img src="assets/Overview.png">
@@ -67,4 +62,5 @@ python lof_code_hiddenstate.py
 The results will be saved as a _results.txt_ file. You can add test datasets from different domains to observe the detection effect of **LDM**.
 
 ## Contact
+
 We are looking forward to any valuable questions or suggestions, please feel free to contact us at ```@None```
