@@ -1,11 +1,11 @@
 <p align="center">
-<img width="500" alt="image" src="assets/title.png">
+<img width="765" alt="image" src="assets/title.png">
      </a>
   
 
 
 <p align="center">
-<img width="765" src="assets/Overview.png">
+<img width="500" src="assets/Overview.png">
  </a>
  
 ## Abstract
