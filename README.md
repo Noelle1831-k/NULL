@@ -5,7 +5,7 @@
 
 
 <p align="center">
-<img width="500" src="assets/Overview.png">
+<img width="600" src="assets/Overview.png">
  </a>
  
 ## Abstract
@@ -62,6 +62,7 @@ python lof_code_hiddenstate.py
 ```
 
 The results will save as a results.txt file.
+
 
 
 
