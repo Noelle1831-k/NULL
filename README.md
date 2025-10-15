@@ -25,42 +25,37 @@ Install the required Python libraries by running:
 pip install -r requirements.txt
 ```
 
-### Step 2: Prepare the Model
+### Step 2: Prepare LLMs
 
-Download the target model to your custom path from Hugging Face:
+Download the target LLMs to your custom path from Hugging Face:
 
 ```bash
 huggingface-cli download --resume-download <model_name> --local-dir <save_path>
 ```
-### Step 3: Prepare the Dataset
+### Step 3: Prepare Testing Datasets
 
-We have placed the files of the **Wikidata, Sciq, and Mathematical_problems datasets** in the **/data** folder. For other open-source datasets, please download them to your custom path, like this:
+We have placed the files of the WikiData, SciQ, and MathProblem datasets in the /data folder. For other open-source datasets, please download them to your custom path:
 
 ```bash
 huggingface-cli download --repo-type dataset --resume-download <dataset_name> --local-dir <save_path>
 ```
 
-### Step 4: Collect the Hidden States
-
-For the analysis file of the target model, such as **code_hiddenstate_analysis.py**, replace the variable name **model_name** with the path where the downloaded model was saved in Step 2.
-And replace the dataset loading file with the path where the downloaded dataset was saved in Step 3.
+### Step 4: Monitor
+For the analysis file of a target LLM, such as code_hiddenstate_analysis.py, replace the variable name model_name with the LLM path (in Step 2), and replace the dataset loading file with the testing dataset path (in Step 3)：
 
 ```bash
 python code_hiddenstate_analysis.py
 ```
 
-The result will be saved as _hidden\_states.npy_ contains feature representations for training or testing detectors.
+The feature representations will save as hidden_states.npy for training or testing.
 
-### Step 5: Train the Detector & Test the Results
+### Step 5: Detector and Testing
 
-For the target domain model, you can modify the corresponding training file, such as **lof_code_hiddenstate.py**, add the training dataset or change the test dataset for it, and run:
+For a target LLM, you can modify the corresponding detector file, such as lof_code_hiddenstate.py, add training datasets or change the testing dataset:
 
 ```bash
 python lof_code_hiddenstate.py
 ```
 
-The results will be saved as a _results.txt_ file. You can add test datasets from different domains to observe the detection effect of **LDM**.
+The results will save as a results.txt file.
 
-## Contact
-
-We are looking forward to any valuable questions or suggestions, please feel free to contact us at ```@None```
