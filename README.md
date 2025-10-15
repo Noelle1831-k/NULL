@@ -4,7 +4,9 @@
   
 ## Abstract
 
-<img src="assets/Overview.png">
+<p align="center">
+<img width="765" src="assets/Overview.png">
+ </a>
 
 Large Language Models (LLMs) have accelerated the rapid development of chatbot web applications in various domains, such as coding, biomedicine and psychology.
 Compared to general LLMs like ChatGPT, domain-specific LLMs require a greater sense of responsibility.
@@ -19,7 +21,7 @@ Systematic experiments on multiple domains of LLMs and datasets demonstrate **Do
 
 ### Step 1: Install Dependencies
 
-Install the required Python libraries by running:
+Install the required Python libraries:
 
 ```bash
 pip install -r requirements.txt
@@ -58,4 +60,5 @@ python lof_code_hiddenstate.py
 ```
 
 The results will save as a results.txt file.
+
 
