@@ -1,5 +1,5 @@
 <p align="center">
-<img width="765" alt="image" src="assets/title.png">
+<img width="500" alt="image" src="assets/title.png">
      </a>
   
 
@@ -62,6 +62,7 @@ python lof_code_hiddenstate.py
 ```
 
 The results will save as a results.txt file.
+
 
 
 
